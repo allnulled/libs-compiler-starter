@@ -25,6 +25,8 @@ Para importar:
 ```js
 const val1 = Libs.require("path/to/importable.js");
 const val2 = await Libs.async("path/to/asynchronous/importable.js");
+const val3 = await Libs.require("./relative.js");
+const str4 = await Libs.source("./source.html");
 ```
 
 Para exportar:
@@ -35,10 +37,20 @@ module.exports = function() {
 }
 ```
 
-## Ficheros
+## Entradas
 
-- en el `dist/main.js` está el compilador
-- en el `src/main.ts` empieza el compilador
+Alineado con la *Arquitectura Troyánica*, las entradas son las siguientes:
+
+- **bin**: desde `src/entry/bin/index.js`
+- **server**: desde `src/entry/server/index.js`
+- **client**: desde `src/entry/client/index.js`
+- **web**: desde `src/entry/web/index.js`
+- **desktop**: desde `src/entry/desktop/index.js`
+
+### Otros ficheros importantes
+
+- en el `dist/libs-compiler.dist.js` está el compilador
+- en el `src/libs-compiler.ts` empieza el compilador
 
 ## ¿Por qué?
 

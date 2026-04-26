@@ -1,0 +1,26 @@
+Esto es una lista de features para tener en cuenta:
+
+- Compilación en TypeScript
+   - Para tipos y ctrl + espacio
+- Compilación con Libs
+   - Para modularidad en runtime
+- Compilación selectiva
+   - Para compilar solo los entry mínimos
+   - Configurable desde `commands/utils/hasSpecificEntry.js`
+- Carpetas con compilación abreviada:
+   - `src/app/{entry}.ts`: una entrada de aplicación
+   - `src/app/{entry}/`: un directorio de entrada
+   - `src/test/{entry}.test.ts`: un test de entrada
+   - `src/test/{entry}.test/`: un directorio de test de entrada
+- Otros ficheros y carpetas importantes:
+   - `src/libs-compiler/`: aquí va el código del compilador de libs
+   - `src/libs/`: aquí irían las libs satelitales no específicas
+   - `src/types/`: aquí irían los tipos
+   - `src/types/global.d.ts`: aquí van los tipos globales automáticamente inyectados
+   - `dist/`: aquí van los distribuibles
+   - `dist/app.{entry}.dist.js`: una entrada de aplicación
+   - `dist/test.{entry}.dist.js`: un test de entrada de aplicación
+   - `commands/build.js`: comando para reconstruir proyecto
+      - Si puede especificar una entry, solo compila esa entry
+   - `commands/test.js`: comando para testear proyecto
+      - Si puede especificar una entry, solo testea esa entry

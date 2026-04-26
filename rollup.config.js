@@ -6,10 +6,10 @@ import sourceToString from "./commands/utils/rollup-plugins/sourceToString.js";
 const projectRoot = path.dirname(fileURLToPath(import.meta.url))
 
 export default {
-  input: "src/main.ts",
+  input: "src/libs-compiler/libs-compiler.ts",
 
   output: {
-    file: "dist/main.js",
+    file: "dist/libs-compiler.dist.js",
     format: "esm",
   },
 

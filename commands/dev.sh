@@ -6,7 +6,7 @@ cd "$DIR"
 
 refrescador \
   -w "$(pwd)/.." \
-  -i "**/dist/main.js" \
+  -i "**/dist/libs-compiler.js" \
   -i "**.dist.*" \
   -i "**/dist.*" \
   -i "**/*.dist.*" \
@@ -17,5 +17,5 @@ refrescador \
   -e "json" \
   -e "css" \
   -e "html" \
-  -x "node $(pwd)/build.js" \
-  -x "bash $(pwd)/test.sh" \
+  -x "node $(pwd)/build.js @{refrescador.file}" \
+  -x "node $(pwd)/test.js @{refrescador.file}" \

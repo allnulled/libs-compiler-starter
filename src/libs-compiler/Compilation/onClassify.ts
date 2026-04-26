@@ -1,4 +1,3 @@
-import fullprint from "../fullprint.ts";
 import trace from "../trace.ts";
 import Compilation from "./Compilation.ts";
 

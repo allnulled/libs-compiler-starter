@@ -24,7 +24,7 @@ Para importar:
 
 ```js
 const val1 = Libs.require("path/to/importable.js");
-const val2 = await Libs.require("path/to/asynchronous/importable.js");
+const val2 = await Libs.async("path/to/asynchronous/importable.js");
 ```
 
 Para exportar:

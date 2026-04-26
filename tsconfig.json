@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "moduleResolution": "Node",
+    "target": "es2020",
+    "allowImportingTsExtensions": true,
+    "baseUrl": ".",
+    "paths": {
+      "{root}/*": ["*"],
+      "{src}/*": ["src/*"]
+    },
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+},
+  "include": ["src/**/*.ts"]
+}

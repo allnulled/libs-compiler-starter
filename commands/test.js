@@ -14,13 +14,18 @@ const main = async function() {
     const entry = entries[index].replace(/\.ts$/g, "");
     if(hasSpecificEntry(file, entry, srcdir)) {
       console.log(`[🧪] Testing specific entry: ${entry}`);
-      return await import(path.resolve(projectRoot, `dist/test.${entry}.dist.js`));
+      return await import(path.resolve(projectRoot, `dist/app/${entry}/${entry}.test.dist.js`));
     }
   }
   console.log("[🧪*️⃣ ] Testing all entries");
   for(let index=0; index<entries.length; index++) {
     const entry = entries[index].replace(/\.ts$/g, "");
-    await import(path.resolve(projectRoot, `dist/test.${entry}.dist.js`));
+    console.log(`[🧪=${index+1}/${entries.length}] Testing entry «${entry}»`);
+    try {
+      await import(path.resolve(projectRoot, `dist/app/${entry}/${entry}.test.dist.js`));
+    } catch (error) {
+      console.error(`[🧪❌] Test failed on entry «${entry}»:`, error);
+    }
   }
 };
 

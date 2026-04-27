@@ -1,4 +1,4 @@
-if(typeof LibClass === "undefined") {
+if(typeof LibsClass === "undefined") {
   LibsClass = class {
     modules = {};
     constructor() {}
@@ -10,7 +10,7 @@ if(typeof LibClass === "undefined") {
       throw error;
     }
     handleFinally(mod) {
-      this.modules[mod.id] = mod.export;
+      this.modules[mod.id] = mod.exports;
       console.log(`[libs] finished "${mod.id}"`);
     }
     require(id) {

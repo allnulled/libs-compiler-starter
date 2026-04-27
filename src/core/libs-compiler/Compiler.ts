@@ -23,6 +23,21 @@ export default class Compiler {
     })();
   }
 
+  evaluateAsyncFunction(source:string, parameters = {}) {
+    trace("Compiler.prototype.evaluateAsyncFunction", arguments);
+    const AsyncFunction:any = (async function() {}).constructor;
+    const asyncFunction = new AsyncFunction(...Object.keys(parameters), source);
+    console.log(`<javascript>\n${source}\n</javascript>`);
+    return asyncFunction(...Object.values(parameters));
+  }
+
+  start(target: string, parameters = {}):Promise<any> {
+    trace("Compiler.prototype.start", arguments);
+    return this.compile(target).then(compilation => {
+      return this.evaluateAsyncFunction(compilation.output.js, parameters);
+    });
+  }
+
   compile(target: string): Promise<Compilation> {
     trace("Compiler.prototype.compile", arguments);
     return this.fetch(target).then((source: string) => {

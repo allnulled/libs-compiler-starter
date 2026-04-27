@@ -50,7 +50,7 @@ Alineado con la *Arquitectura Troyánica*, las entradas son las siguientes:
 ### Otros ficheros importantes
 
 - en el `dist/libs-compiler.dist.js` está el compilador
-- en el `src/libs-compiler.ts` empieza el compilador
+- en el `src/external/libs-compiler.ts` empieza el compilador
 
 ## ¿Por qué?
 

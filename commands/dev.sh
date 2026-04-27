@@ -6,10 +6,12 @@ cd "$DIR"
 
 refrescador \
   -w "$(pwd)/.." \
-  -i "**/dist/libs-compiler.js" \
+  -s "$(pwd)/../dist/app/web" \
   -i "**.dist.*" \
   -i "**/dist.*" \
   -i "**/*.dist.*" \
+  -i "$(pwd)/../src/modules/settings.json" \
+  -i "$(pwd)/../tsconfig.json" \
   -e "sh" \
   -e "ts" \
   -e "tsx" \

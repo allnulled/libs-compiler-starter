@@ -5,12 +5,37 @@
     "target": "es2020",
     "allowImportingTsExtensions": true,
     "baseUrl": ".",
-    "paths": {
-      "{root}/*": ["*"],
-      "{src}/*": ["src/*"]
-    },
     "experimentalDecorators": true,
-    "emitDecoratorMetadata": true
-},
-  "include": ["src/**/*.ts", "src/types/global.d.ts"]
+    "emitDecoratorMetadata": true,
+    "paths": {
+      "{root}/*": [
+        "*"
+      ],
+      "{src}/*": [
+        "src/*"
+      ],
+      "{types}/*": [
+        "src/types/*"
+      ],
+      "{core}/*": [
+        "src/core/*"
+      ],
+      "{modules}/*": [
+        "src/modules/*"
+      ],
+      "{test}/*": [
+        "src/test/*"
+      ],
+      "{app}/*": [
+        "src/app/*"
+      ],
+      "{dist}/*": [
+        "dist/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/types/global.d.ts"
+  ]
 }

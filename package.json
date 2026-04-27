@@ -6,7 +6,7 @@
     "dev": "bash commands/dev.sh",
     "build": "node commands/build.js",
     "start": "node dist/main.js",
-    "test": "bash commands/test.sh"
+    "test": "node commands/test.js"
   },
   "keywords": [],
   "author": "allnulled",
